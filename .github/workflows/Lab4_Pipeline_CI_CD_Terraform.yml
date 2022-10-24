@@ -50,6 +50,9 @@ jobs:
     needs: Build-Terraform
     steps:
 
+      - name: Checks-out du repository
+        uses: actions/checkout@v2
+        
       - uses: actions/download-artifact@v3
         with:
           name: terraform-plan
