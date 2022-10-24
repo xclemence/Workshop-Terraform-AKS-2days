@@ -43,7 +43,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: terraform-plan
-          path: monplan.tfplan
+          path: ./Terraform/Lab4_Pipeline_CI_CD_Terraform/monplan.tfplan
 
   Deploy-Terraform:
     runs-on: ubuntu-latest
@@ -53,7 +53,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: terraform-plan
-          path: monplan.tfplan
+          path: ./Terraform/Lab4_Pipeline_CI_CD_Terraform/monplan.tfplan
 
       # apply a execution plan https://www.terraform.io/cli/commands/apply      
       - name: Terraform Apply
