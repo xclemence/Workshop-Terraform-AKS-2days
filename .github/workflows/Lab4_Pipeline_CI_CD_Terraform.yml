@@ -53,8 +53,13 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: terraform-plan
-          path: ./Terraform/Lab4_Pipeline_CI_CD_Terraform/monplan.tfplan
+          path: ./Terraform/Lab4_Pipeline_CI_CD_Terraform/
 
+      - name: Terraform Apply
+        run: |
+          cd ./Terraform/Lab4_Pipeline_CI_CD_Terraform
+          ls -all
+          
       # apply a execution plan https://www.terraform.io/cli/commands/apply      
       - name: Terraform Apply
         run: |
