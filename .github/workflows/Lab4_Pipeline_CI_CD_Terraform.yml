@@ -55,6 +55,12 @@ jobs:
           name: terraform-plan
           path: ./Terraform/Lab4_Pipeline_CI_CD_Terraform/
 
+      # Install the needed version of Terraform cli
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.1.7
+
       - name: Terraform Apply
         run: |
           cd ./Terraform/Lab4_Pipeline_CI_CD_Terraform
